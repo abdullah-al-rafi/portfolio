@@ -30,8 +30,17 @@ if os.path.exists('secrets.json'):
         SECRET_KEY = data["DJANGO_SECRET_KEY"]
     secret.close()
 
+GOOGLE_RECAPTCHA_SECRET_KEY = data["GOOGLE_RECAPTCHA"]
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+EMAIL_HOST = data["EMAIL_HOST"]
+EMAIL_HOST_USER = data["EMAIL_HOST_USER"]
+EMAIL_HOST_PASSWORD = data["EMAIL_HOST_PASSWORD"]
+EMAIL_PORT = data["EMAIL_PORT"]
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 ALLOWED_HOSTS = []
 
@@ -112,6 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
