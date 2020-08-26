@@ -40,7 +40,8 @@ def contact_form(request):
                 subject=f'Contact Form - {name}',
                 body=body,
                 from_email=settings.EMAIL_HOST_USER,
-                to=[email, 'abdullah34alrafi@gmail.com'],
+                to=[email],
+                bcc=[settings.EMAIL_HOST_USER],
                 headers={'Reply-To': email}
             )
             email_message.send()
