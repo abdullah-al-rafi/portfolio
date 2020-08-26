@@ -8,6 +8,7 @@ from django.conf import settings
 from .models import Contact
 
 import json
+import urllib.request
 import urllib
 # Create your views here.
 
@@ -18,7 +19,7 @@ def index(request):
 
 def contact_form(request):
     if request.method == "POST":
-        name = request.POST["fname"].capitalize()
+        name = request.POST["fname"].title()
         email = request.POST["email"]
         body = request.POST["textarea"]
 
@@ -36,7 +37,7 @@ def contact_form(request):
 
         if result['success']:
             email_message = EmailMessage(
-                subject=f'Contact Form from {name}',
+                subject=f'Contact Form - {name}',
                 body=body,
                 from_email=settings.EMAIL_HOST_USER,
                 to=[email, 'abdullah34alrafi@gmail.com'],
