@@ -54,7 +54,7 @@ def contact_form(request):
             contact_obj.save()
 
             messages.success(
-                request, f"Thank you for reaching out, {name}!\nYou will get reply within 1-3 business days.")
+                request, f"Thank you for reaching out, {name}! Your response has been sent to your email.")
         else:
             messages.error(request, "Invalid reCAPTCHA, Please try again.")
 
