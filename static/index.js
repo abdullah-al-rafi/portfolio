@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Submit!");
 
     let csrf = $("input[name=csrfmiddlewaretoken]").val();
-    $(".btn").hide();
+    $("#btn").hide();
     $(".ajaxProgress").show();
     $.ajax({
       url: "view",
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
               messageElement.id = "dangerMessage";
               messageElement.innerHTML = `<h3 class="alert-danger">${response.message}</h3>`;
               element.append(messageElement);
-              $(".btn").show();
+              $("#btn").show();
             }
           });
         }
