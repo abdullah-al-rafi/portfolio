@@ -59,7 +59,7 @@ class ContactHandlerView(View):
                 contact_obj.save()
 
                 return JsonResponse({
-                    'message': f"Thank you for reaching out, {name}!\nYour response has been sent to:\n{email}.",
+                    'message': f"Thank you for reaching out, {name}!\nA copy of your response has been sent to:\n{email}.",
                     'type': "success",
                 }, content_type="application/json", status=200)
             else:
