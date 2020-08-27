@@ -46,13 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
         $(".ajaxProgress").hide();
       },
 
-      error: function (xhr, errmsg, err) {
-        $("#results").html(
-          "<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " +
-            errmsg +
-            " <a href='#' class='close'>&times;</a></div>"
-        );
-        console.log(xhr.status + ": " + xhr.responseText);
+      error: function (err) {
+        console.log(JSON.stringify(err));
+        $(".ajaxProgress").hide();
+        $("#btn").show();
       },
     });
   });
