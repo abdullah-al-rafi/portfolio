@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Submit!");
 
     let csrf = $("input[name=csrfmiddlewaretoken]").val();
-    // $(".ajaxProgress").show();
+    $(".ajaxProgress").show();
     $.ajax({
       url: "view",
       type: "POST",
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           });
         }
-        // $(".ajaxProgress").hide();
+        $(".ajaxProgress").hide();
       },
 
       error: function (xhr, errmsg, err) {
