@@ -3,36 +3,35 @@
 
 {% block script %}
     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 {% endblock script %}
 
 {% block bodyblock %}
     <h1>Welcome to my portfolio website!</h1>
-    <div class="contact">
+    <div id="contact">
         
-        <form action="{% url 'contact' %}" method="POST">
+        <form method="POST" id="contactForm">
             {% csrf_token %}
             <div class="form-group">
                 <h3>Contact Form</h3>
             </div>
-            <div class="form-group">
-                {% if messages %}
-                    {% for message in messages %}
-                        <large id="emailHelp" class="form-text text-muted alert-danger">{{message}}</large>
-                    {% endfor %}
-                {% endif %}
+            <div class="form-group" id="messages">
             </div>
             <div class="form-group">
-            <input autofocus required class="form-control text-capitalize" type="text" name="fname" placeholder="Full Name*">
+                <input autofocus required class="form-control text-capitalize" type="text" id="fname" placeholder="Full Name*">
             </div>
             <div class="form-group">
-            <input required class="form-control" type="email" name="email" placeholder="Contact Email*">
-            <small id="emailHelp" class="form-text text-muted">Your email will never be shared with anyone else.</small>
+            <input required class="form-control" type="email" id="email" placeholder="Contact Email*">
+                <small id="emailHelp" class="form-text text-muted">Your email will never be shared with anyone else.</small>
             </div>
             <div class="form-group">
-            <textarea required class="form-control" name="textarea" cols="10" rows="5" placeholder="Your Message*"></textarea>
+                <textarea required class="form-control" id="textarea" cols="10" rows="5" placeholder="Your Message*"></textarea>
             </div>
             <small id="emailHelp" class="form-text text-muted">* fields are required!</small><br>
-            <div class="g-recaptcha" data-sitekey="6LfFOsMZAAAAALybrOe2eqZeGTHN1pj2cLMwNKz6"></div> <br>
+            <div class="g-recaptcha" id="g-recaptcha-response" data-sitekey="6LfFOsMZAAAAALybrOe2eqZeGTHN1pj2cLMwNKz6"></div> <br>
+            {% comment %} <div class="ajaxProgress">
+                <img src="{% static 'bar.gif' %}" alt="loading...">
+            </div> <br> {% endcomment %}
             <input type="submit" class="btn btn-primary">
         </form>
     </div>

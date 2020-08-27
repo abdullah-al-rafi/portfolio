@@ -3,7 +3,7 @@ body {
   text-align: center;
 }
 
-.contact {
+#contact {
   height: 100%;
   display: flex;
   margin: 5%;
@@ -17,6 +17,12 @@ body {
 
 form {
   margin: auto;
+}
+
+.ajaxProgress {
+  display: none;
+  align-items: center;
+  justify-items: center;
 }
 
 .g-recaptcha {
