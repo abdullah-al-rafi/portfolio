@@ -35,3 +35,7 @@ form {
 textarea {
   resize: none;
 }
+
+#customError {
+  text-align: center;
+}

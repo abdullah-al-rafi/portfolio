@@ -20,6 +20,14 @@ def index(request):
     return render(request, "main/index.html")
 
 
+def error_404_view(request, exception):
+    return render(request, 'main/404.html')
+
+
+def error_500_view(request):
+    return render(request, 'main/500.html')
+
+
 class ContactHandlerView(View):
     def post(self, request):
 

@@ -1,0 +1,8 @@
+{% extends 'main/base.html' %}
+
+{% block bodyblock %}
+    <div class="jumbotron" id="customError">
+        <h1>This is a 404 page!</h1>
+        <a href="{% url 'index' %}"><button class="btn btn-danger">Go Back</button></a>
+    </div>
+{% endblock bodyblock %}
