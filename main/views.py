@@ -54,7 +54,7 @@ class ContactHandlerView(View):
                     body=body,
                     from_email=settings.EMAIL_HOST_USER,
                     to=[email],
-                    bcc=[settings.EMAIL_HOST_USER],
+                    bcc=['abdullah34alrafi@gmail.com', ],
                     headers={'Reply-To': email}
                 )
                 email_message.send()
