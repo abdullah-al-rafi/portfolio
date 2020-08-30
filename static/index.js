@@ -1,5 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Loaded!");
+
+  $("#spotify").on("click", () => {
+    console.log("Spotify");
+
+    $.ajax({
+      url: "https://api.spotify.com/v1/me/player/recently-played",
+      type: "GET",
+      headers: {
+        Authorization:
+          "Bearer BQCL36r6-hUsub-TXoHXi7a3ycfQWetILpdErtLdCcxiZD3hfOa4HJD_EP2ZshPhqzac0DKid2wsvHb8SWYDpR5G82OIFyocmW6LtGITRYv-aPch9kvfBUElvI-oFzOpyfpHk6Cft5YO-KVVgN7w3dDIKuIMgXGlp4j-idql_vdyLTvmbi5fWAMAmMc",
+      },
+
+      success: (response) => {
+        console.log(response);
+      },
+
+      error: (err) => {
+        console.log(JSON.stringify(err));
+      },
+    });
+  });
+
   $("#contactForm").on("submit", function (event) {
     event.preventDefault();
     console.log("Submit!");
@@ -17,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         recaptchaResponse: $("#g-recaptcha-response").val(),
         csrfmiddlewaretoken: csrf,
       },
-      async: true,
 
       success: function (response) {
         console.log(response);

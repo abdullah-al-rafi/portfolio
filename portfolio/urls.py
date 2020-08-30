@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
 from django.conf.urls import handler404, handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('api', include('rest_framework.urls')),
+    path('react', TemplateView.as_view(template_name='index.html')),
 ]
 
 handler404 = 'main.views.error_404_view'
