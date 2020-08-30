@@ -22,7 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('api', include('rest_framework.urls')),
-    path('react', TemplateView.as_view(template_name='index.html')),
 ]
 
 handler404 = 'main.views.error_404_view'

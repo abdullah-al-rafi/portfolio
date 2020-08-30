@@ -13,13 +13,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import socket
 import os
 import json
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-REACT_DIR = os.path.join(BASE_DIR, 'frontend/build')
-REACT_STATIC_DIR = os.path.join(BASE_DIR, 'frontend/build/static')
+REACT_DIR = os.path.join(BASE_DIR, 'build')
+REACT_STATIC_DIR = os.path.join(BASE_DIR, 'build/static')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT_DIR = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -38,7 +39,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = data["GOOGLE_RECAPTCHA"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if socket.gethostname() == "Grenade":
-    DEBUG = False
+    DEBUG = True
     ALLOWED_HOSTS = ["127.0.0.1", ]
 else:
     DEBUG = False
@@ -78,7 +79,7 @@ MIDDLEWARE = [
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ROOT_URLCONF = 'portfolio.urls'
 
@@ -159,7 +160,7 @@ STATICFILES_DIRS = [
     REACT_STATIC_DIR
 ]
 
-STATIC_ROOT = STATIC_ROOT_DIR
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',)
