@@ -1,0 +1,57 @@
+body {
+  padding: 5%;
+  text-align: center;
+}
+
+#contact {
+  height: 100%;
+  display: flex;
+  margin: 5%;
+  padding: 2%;
+  border: 2px solid black;
+  background-color: rgb(216, 216, 216);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#spotify {
+  height: 100%;
+  display: flex;
+  margin: 5%;
+  padding: 2%;
+  border: 2px solid black;
+  background-color: rgb(216, 216, 216);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  margin: auto;
+}
+
+.ajaxProgress {
+  display: none;
+  align-items: center;
+  justify-items: center;
+}
+
+#g-recaptcha-response {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
+  resize: none;
+}
+
+#customError {
+  text-align: center;
+}
+
+#video {
+  margin: 5%;
+}

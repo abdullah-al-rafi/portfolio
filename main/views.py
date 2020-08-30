@@ -6,6 +6,8 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.views.generic import View
 from rest_framework import viewsets
+from django.middleware.csrf import get_token
+
 
 from .models import Contact
 from .serializers import ContactSerializer
@@ -17,7 +19,8 @@ import urllib
 
 
 def index(request):
-    return render(request, "main/index.html")
+    csrf_token = get_token(request)
+    return render(request, "index.html")
 
 
 def error_404_view(request, exception):
@@ -26,6 +29,10 @@ def error_404_view(request, exception):
 
 def error_500_view(request):
     return render(request, 'main/500.html')
+
+
+def zohofile(request):
+    return render(request, "zohoverify/verifyforzoho.html")
 
 
 class ContactHandlerView(View):

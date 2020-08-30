@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import ContactForm from "./components/contactForm/ContactForm";
 
 function App() {
   return (
     <div className="App">
-      <h1>I am from React!</h1>
-      <h3>This is really cool!</h3>
+      <ContactForm />
     </div>
   );
 }

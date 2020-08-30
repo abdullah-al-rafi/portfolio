@@ -11,5 +11,6 @@ router.register('contacts', views.ContactView, basename='contacts')
 urlpatterns = [
     path('', views.index, name='index'),
     path('view', ContactHandlerView.as_view()),
+    path('zohoverify/verifyforzoho.html', views.zohofile, name='zohofile'),
     path('', include(router.urls))
 ]

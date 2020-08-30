@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import socket
 import os
 import json
 from pathlib import Path
@@ -20,6 +21,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 REACT_DIR = os.path.join(BASE_DIR, 'frontend/build')
 REACT_STATIC_DIR = os.path.join(BASE_DIR, 'frontend/build/static')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT_DIR = os.path.join(BASE_DIR, 'staticfiles')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -35,7 +37,12 @@ if os.path.exists('secrets.json'):
 GOOGLE_RECAPTCHA_SECRET_KEY = data["GOOGLE_RECAPTCHA"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if socket.gethostname() == "Grenade":
+    DEBUG = False
+    ALLOWED_HOSTS = ["127.0.0.1", ]
+else:
+    DEBUG = False
+    ALLOWED_HOSTS = ["alrafi-portfolio.herokuapp.com", ]
 
 EMAIL_HOST = data["EMAIL_HOST"]
 EMAIL_HOST_USER = data["EMAIL_HOST_USER"]
@@ -43,8 +50,6 @@ EMAIL_HOST_PASSWORD = data["EMAIL_HOST_PASSWORD"]
 EMAIL_PORT = data["EMAIL_PORT"]
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -68,7 +73,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 ROOT_URLCONF = 'portfolio.urls'
 
@@ -148,6 +158,8 @@ STATICFILES_DIRS = [
     STATIC_DIR,
     REACT_STATIC_DIR
 ]
+
+STATIC_ROOT = STATIC_ROOT_DIR
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',)
