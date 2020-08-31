@@ -3,7 +3,7 @@ import $ from "jquery";
 import Cookies from "js-cookie";
 import ReCAPTCHA from "react-google-recaptcha";
 
-import bar from "./bar.gif";
+import PulseLoader from "react-spinners/PulseLoader";
 import "./ContactForm.css";
 
 function ContactForm() {
@@ -64,7 +64,7 @@ function ContactForm() {
 
   return (
     <React.Fragment>
-      <h1>Welcome to my portfolio website!</h1>
+      <h1>👓 Welcome to my portfolio website! 🎨</h1>
       <div id="contact">
         <form onSubmit={contactFormHandler} id="contactForm">
           <div className="form-group">
@@ -115,7 +115,7 @@ function ContactForm() {
           </div>
           <br />
           <div className="ajaxProgress">
-            <img src={bar} alt="loading..." />
+            <PulseLoader size={15} color="#0C4B33" />
           </div>
           <br />
           <input type="submit" className="btn btn-primary" id="btn" />
