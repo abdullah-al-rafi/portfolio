@@ -4,9 +4,7 @@ from django.db import models
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=64, blank=True)
+    name = models.CharField(max_length=64)
     email = models.EmailField(max_length=254)
     body = models.TextField(max_length=9999)
-
-    def __str__(self):
-        return self.email
+    time_now = models.DateTimeField(auto_now_add=True)

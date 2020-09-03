@@ -96,3 +96,11 @@ class ContactView(viewsets.ModelViewSet):
         serializer = ContactSerializer(model)
 
         return HttpResponse(serializer.data)
+
+    def post(self, request):
+        Contact.objects.create(
+            name=request.data['name'],
+            email=request.data['email'],
+            body=request.data['body']
+        )
+        return HttpResponse(serializer.data, status=status.HTTP_201_CREATED)
