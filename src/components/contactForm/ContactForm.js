@@ -64,7 +64,9 @@ function ContactForm() {
 
   return (
     <React.Fragment>
-      <h1>👓 Welcome to my portfolio website! 🎨</h1>
+      <h1 style={{ marginTop: "5%" }}>
+        👓 Welcome to my portfolio website! 🎨
+      </h1>
       <div id="contact">
         <form onSubmit={contactFormHandler} id="contactForm">
           <div className="form-group">
