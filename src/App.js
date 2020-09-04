@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
 
+import Body from "./components/body/Body";
 import ContactForm from "./components/contactForm/ContactForm";
-import Slider from "./components/carousel/Slider";
+import Typing from "./components/typing/Typing";
 import Footer from "./components/footer/Footer";
 import Top from "./components/toTop/Top";
 import Navbar from "./components/navbar/Navbar";
@@ -10,8 +11,9 @@ import Navbar from "./components/navbar/Navbar";
 function App() {
   return (
     <div className="App">
+      <Typing />
       <Navbar />
-      <Slider />
+      <Body />
       <ContactForm />
       <Top />
       <Footer />
