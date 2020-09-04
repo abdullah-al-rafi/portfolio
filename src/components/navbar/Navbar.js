@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Final from "./final.png";
 import { Link } from "react-scroll";
 
