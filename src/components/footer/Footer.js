@@ -8,14 +8,26 @@ function Footer() {
       <footer className="page-footer font-small blue">
         <div className="footer-copyright text-center py-3">
           <a
+            target="_blank"
+            className="badge"
+            href="http://www.djangoproject.com/"
+          >
+            <img
+              src="https://www.djangoproject.com/m/img/badges/djangomade124x25.gif"
+              border="0"
+              alt="Made with Django & React."
+              title="Made with Django & React."
+            />
+          </a>
+          <a
             target="__blank"
             href="https://www.linkedin.com/in/abdullahalrafi/"
           >
             <FaLinkedin size={40} style={{ color: "#005888" }} />
           </a>{" "}
-          <a target="__blank" href="https://github.com/alrafiabdullah">
+          <a target="___blank" href="https://github.com/alrafiabdullah">
             <FaGithubSquare size={40} style={{ color: "#000" }} />
-          </a>
+          </a>{" "}
           <br />© 2020 Copyright:
           <a
             style={{ color: "#0C4B33" }}

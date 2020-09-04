@@ -10,3 +10,10 @@ footer {
 a {
   text-decoration: none;
 }
+
+.badge {
+  position: absolute;
+  left: 5%;
+  width: 124px;
+  height: auto;
+}
