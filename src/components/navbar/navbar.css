@@ -6,16 +6,17 @@ button {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color: #119160;
+  color: #fff;
   text-decoration: none;
 }
 
 header {
+  border-top: 2px solid white;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 30px 10%;
-  background-color: whitesmoke;
+  background-color: black;
   overflow: auto;
   min-height: 10em;
 }
@@ -39,14 +40,14 @@ header {
 }
 
 .nav__links li a:hover {
-  color: #0c4b33;
+  color: #d31b7a;
 }
 
 button {
   color: white;
   margin-left: 7%;
   padding: 9px 25px;
-  background-color: #0c4b33;
+  background-color: #d31b7a;
   border: 2px solid white;
   border-radius: 50px;
   cursor: pointer;
@@ -54,7 +55,7 @@ button {
 }
 
 button:hover {
-  color: #0c4b33;
+  color: #d31b7a;
   background-color: whitesmoke;
-  border: 2px solid #0c4b33;
+  border: 2px solid #d31b7a;
 }
