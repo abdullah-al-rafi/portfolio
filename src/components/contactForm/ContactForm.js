@@ -2,6 +2,7 @@ import React from "react";
 import $ from "jquery";
 import Cookies from "js-cookie";
 import ReCAPTCHA from "react-google-recaptcha";
+import { Parallax } from "react-parallax";
 
 import PulseLoader from "react-spinners/PulseLoader";
 import "./ContactForm.css";
@@ -64,62 +65,64 @@ function ContactForm() {
 
   return (
     <React.Fragment>
-      <div id="contact">
-        <form onSubmit={contactFormHandler} id="contactForm">
-          <div className="form-group">
-            <h3>Contact Form</h3>
-          </div>
-          <div className="form-group" id="messages"></div>
-          <div className="form-group">
-            <input
-              autofocus
-              required
-              className="form-control text-capitalize"
-              type="text"
-              id="fname"
-              placeholder="Full Name*"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              required
-              className="form-control"
-              type="email"
-              id="email"
-              placeholder="Contact Email*"
-            />
+      <Parallax bgImage={require("../img/leo.webp")} blur={{ min: -1, max: 8 }}>
+        <div id="contact">
+          <form onSubmit={contactFormHandler} id="contactForm">
+            <div className="form-group">
+              <h3 style={{ color: "white" }}>Contact Form</h3>
+            </div>
+            <div className="form-group" id="messages"></div>
+            <div className="form-group">
+              <input
+                autofocus
+                required
+                className="form-control text-capitalize"
+                type="text"
+                id="fname"
+                placeholder="Full Name*"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                required
+                className="form-control"
+                type="email"
+                id="email"
+                placeholder="Contact Email*"
+              />
+              <small id="emailHelp" className="form-text text-muted">
+                Your email will never be shared with anyone else.
+              </small>
+            </div>
+            <div className="form-group">
+              <textarea
+                required
+                className="form-control"
+                id="textarea"
+                cols="10"
+                rows="5"
+                placeholder="Your Message*"
+              ></textarea>
+            </div>
             <small id="emailHelp" className="form-text text-muted">
-              Your email will never be shared with anyone else.
+              * fields are required!
             </small>
-          </div>
-          <div className="form-group">
-            <textarea
-              required
-              className="form-control"
-              id="textarea"
-              cols="10"
-              rows="5"
-              placeholder="Your Message*"
-            ></textarea>
-          </div>
-          <small id="emailHelp" className="form-text text-muted">
-            * fields are required!
-          </small>
-          <br />
-          <div>
-            <ReCAPTCHA
-              id="g-recaptcha-response"
-              sitekey="6LfFOsMZAAAAALybrOe2eqZeGTHN1pj2cLMwNKz6"
-            />
-          </div>
-          <br />
-          <div className="ajaxProgress">
-            <PulseLoader size={15} color="#0C4B33" />
-          </div>
-          <br />
-          <input type="submit" className="btn btn-primary" id="btn" />
-        </form>
-      </div>
+            <br />
+            <div>
+              <ReCAPTCHA
+                id="g-recaptcha-response"
+                sitekey="6LfFOsMZAAAAALybrOe2eqZeGTHN1pj2cLMwNKz6"
+              />
+            </div>
+            <br />
+            <div className="ajaxProgress">
+              <PulseLoader size={15} color="#0C4B33" />
+            </div>
+            <br />
+            <input type="submit" className="btn btn-primary" id="btn" />
+          </form>
+        </div>
+      </Parallax>
     </React.Fragment>
   );
 }
