@@ -1,6 +1,7 @@
 import React from "react";
 import { Parallax } from "react-parallax";
-import Carousel from "react-bootstrap/Carousel";
+
+// import "./body.css";
 
 function Body() {
   const inlineStyle = {
@@ -12,15 +13,25 @@ function Body() {
     transform: "translate(-50%, -50%)",
   };
 
+  const styles = {
+    height: "900px",
+    aspectRatio: "16/9",
+  };
+
   return (
     <React.Fragment>
-      <Parallax bgImage={require("../img/sea.webp")} strength={700}>
-        <div className="about" style={{ height: "500px" }}>
+      <Parallax
+        className="about"
+        bgImage={require("../img/nature.webp")}
+        strength={-500}
+      >
+        <div style={styles}>
           <div style={inlineStyle}>About Section</div>
         </div>
       </Parallax>
       <Parallax
-        bgImage={require("../img/leo.webp")}
+        className="skills"
+        bgImage={require("../img/python.png")}
         renderLayer={(percentage) => (
           <div
             className="skills"
@@ -36,14 +47,16 @@ function Body() {
           ></div>
         )}
       >
-        <div style={{ height: "500px" }}>
-          <div className="projects" style={inlineStyle}>
-            Skills Section
-          </div>
+        <div style={styles}>
+          <div style={inlineStyle}>Skills Section</div>
         </div>
       </Parallax>
-      <Parallax bgImage={require("../img/nature.webp")} strength={-300}>
-        <div style={{ height: "500px" }}>
+      <Parallax
+        className="projects"
+        bgImage={require("../img/sea.webp")}
+        strength={700}
+      >
+        <div style={styles}>
           <div style={inlineStyle}>Project Section</div>
         </div>
       </Parallax>
