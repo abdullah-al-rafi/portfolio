@@ -55,6 +55,7 @@ function Footer() {
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.djangoproject.com/"
+            style={{ color: "#0C4B33" }}
           >
             Django
           </a>
@@ -78,7 +79,13 @@ function Footer() {
           </a>
           .
           <br />© 2020 Copyright:
-          <a href="http://alrafi-portfolio.herokuapp.com"> Abdullah Al Rafi</a>
+          <a
+            style={{ color: "#0C4B33" }}
+            href="http://alrafi-portfolio.herokuapp.com"
+          >
+            {" "}
+            Abdullah Al Rafi
+          </a>
         </div>
       </footer>
     </React.Fragment>
