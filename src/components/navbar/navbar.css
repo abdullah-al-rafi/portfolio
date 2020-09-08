@@ -10,14 +10,22 @@ button {
   text-decoration: none;
 }
 
+li {
+  transition: all 0.3s ease 0s;
+}
+
+li:hover {
+  cursor: pointer;
+  font-size: 20px;
+  color: #d31b7a;
+}
+
 header {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid #d31b7a;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 30px 10%;
-  background-color: black;
   overflow: auto;
   min-height: 10em;
 }

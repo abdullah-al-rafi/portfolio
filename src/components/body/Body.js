@@ -5,7 +5,7 @@ import { Parallax } from "react-parallax";
 
 function Body() {
   const inlineStyle = {
-    background: "#fff",
+    color: "#d31b7a",
     left: "50%",
     top: "50%",
     position: "absolute",
@@ -14,7 +14,7 @@ function Body() {
   };
 
   const styles = {
-    height: "900px",
+    height: "950px",
     aspectRatio: "16/9",
   };
 
@@ -22,42 +22,49 @@ function Body() {
     <React.Fragment>
       <Parallax
         className="about"
-        bgImage={require("../img/nature.webp")}
+        bgImage={require("../img/white.png")}
         strength={-500}
+        style={{ borderBottom: "20px solid white" }}
       >
         <div style={styles}>
-          <div style={inlineStyle}>About Section</div>
+          <div style={inlineStyle}>
+            <h3>About Section</h3>
+          </div>
         </div>
       </Parallax>
       <Parallax
         className="skills"
-        bgImage={require("../img/python.png")}
+        // blur={{ min: -1, max: 10 }}
+        bgImage="none" //{require("../img/2.png")}
         renderLayer={(percentage) => (
           <div
             className="skills"
             style={{
+              color: "#d31b7a",
               position: "absolute",
               width: "100px",
               height: "100px",
-              background: `rgba(255, 123, 23, ${percentage * 1})`,
+              scale: `none`,
               left: "50%",
               top: "50%",
               transform: `translate(-50%, -50%) scale(${percentage * 5})`,
             }}
-          ></div>
+          >
+            <h5>Skills Section</h5>
+          </div>
         )}
       >
-        <div style={styles}>
-          <div style={inlineStyle}>Skills Section</div>
-        </div>
+        <div style={styles}></div>
       </Parallax>
       <Parallax
         className="projects"
-        bgImage={require("../img/sea.webp")}
+        bgImage={require("../img/white.png")}
         strength={700}
       >
         <div style={styles}>
-          <div style={inlineStyle}>Project Section</div>
+          <div style={inlineStyle}>
+            <h3>Project Section</h3>
+          </div>
         </div>
       </Parallax>
     </React.Fragment>

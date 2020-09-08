@@ -3,3 +3,19 @@
   padding-top: 56.25%;
   width: 100%;
 }
+
+.projects {
+  position: relative;
+  padding-top: 56.25%;
+  width: 100%;
+}
+
+.about {
+  position: relative;
+  padding-top: 56.25%;
+  width: 100%;
+}
+
+.borders {
+  border-bottom: 2px solid #d31b7a;
+}

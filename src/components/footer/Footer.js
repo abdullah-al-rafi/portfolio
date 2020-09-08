@@ -80,7 +80,7 @@ function Footer() {
           .
           <br />© 2020 Copyright:
           <a
-            style={{ color: "#0C4B33" }}
+            style={{ color: "#d31b7a" }}
             href="http://alrafi-portfolio.herokuapp.com"
           >
             {" "}

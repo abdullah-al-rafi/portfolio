@@ -7,13 +7,16 @@
 }
 
 .loading-screen {
-  width: 83%;
+  width: 90%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.full {
+  background-color: black;
 }

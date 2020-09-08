@@ -12,7 +12,7 @@ import Navbar from "./components/navbar/Navbar";
 function App() {
   function loading() {
     $(window).on("load", () => {
-      $(".loading-screen").fadeOut("slow");
+      $(".loading-screen").fadeOut("fast");
       document.getElementById("app").style.display = "block";
     });
   }
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <div onLoadStart={loading()}>
+      <div class="full" onLoadStart={loading()}>
         <div className="loading-screen">
           <PacmanLoader size={45} color="#61dafb" />
         </div>

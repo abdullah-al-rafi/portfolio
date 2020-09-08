@@ -1,5 +1,11 @@
 body {
-  background-color: #000;
+  /* background-color: black; */
+  background-image: url(./components/img/1.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
