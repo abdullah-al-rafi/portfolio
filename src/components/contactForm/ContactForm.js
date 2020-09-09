@@ -2,7 +2,6 @@ import React from "react";
 import $ from "jquery";
 import Cookies from "js-cookie";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Parallax } from "react-parallax";
 
 import PulseLoader from "react-spinners/PulseLoader";
 import "./ContactForm.css";
@@ -65,7 +64,6 @@ function ContactForm() {
 
   return (
     <React.Fragment>
-      {/* <Parallax bgImage={require("../img/1.png")} blur={{ min: -1, max: 15 }}> */}
       <div id="contact">
         <form onSubmit={contactFormHandler} id="contactForm">
           <div className="form-group">

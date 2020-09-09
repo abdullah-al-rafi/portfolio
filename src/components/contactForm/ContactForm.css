@@ -1,22 +1,10 @@
 #contact {
-  height: 100%;
+  height: 880px;
   display: flex;
   margin: 5%;
   padding: 2%;
   /* border: 2px solid black;
   background-color: rgb(216, 216, 216); */
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-#spotify {
-  height: 100%;
-  display: flex;
-  margin: 5%;
-  padding: 2%;
-  border: 2px solid black;
-  background-color: rgb(216, 216, 216);
   text-align: center;
   align-items: center;
   justify-content: center;

@@ -14,5 +14,4 @@ urlpatterns = [
     path('view', ContactHandlerView.as_view()),
     path('zohoverify/verifyforzoho.html', views.zohofile, name='zohofile'),
     path('', include(router.urls)),
-    # re_path('.*', TemplateView.as_view(template_name='index.html')),
 ]
