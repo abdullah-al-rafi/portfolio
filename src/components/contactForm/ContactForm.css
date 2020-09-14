@@ -1,10 +1,8 @@
 #contact {
-  height: 880px;
+  height: 800px;
   display: flex;
   margin: 5%;
   padding: 2%;
-  /* border: 2px solid black;
-  background-color: rgb(216, 216, 216); */
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -31,10 +29,19 @@ textarea {
   resize: none;
 }
 
-#customError {
-  text-align: center;
+#btn {
+  color: white;
+  margin-left: 7%;
+  padding: 5px 20px;
+  background-color: #d31b7a;
+  border: 2px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
 }
 
-#video {
-  margin: 5%;
+#btn:hover {
+  color: #d31b7a;
+  background-color: whitesmoke;
+  border: 2px solid #d31b7a;
 }

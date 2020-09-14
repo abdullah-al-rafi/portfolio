@@ -10,11 +10,11 @@ button {
   text-decoration: none;
 }
 
-li {
+#navs {
   transition: all 0.3s ease 0s;
 }
 
-li:hover {
+#navs:hover {
   cursor: pointer;
   font-size: 20px;
   color: #d31b7a;

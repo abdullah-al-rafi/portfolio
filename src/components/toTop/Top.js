@@ -23,8 +23,8 @@ function Top() {
 
   return (
     <React.Fragment>
-      <div class="page-wrapper">
-        <div class="circle-wrapper"></div>
+      <div className="page-wrapper">
+        <div className="circle-wrapper"></div>
       </div>
       <div className="scroll-to-top text-center" onClick={scrollToTop}>
         <i className="icon fa fa-chevron-up"></i>

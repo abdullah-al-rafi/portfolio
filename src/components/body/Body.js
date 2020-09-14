@@ -1,20 +1,28 @@
 import React from "react";
 import { Parallax } from "react-parallax";
 
-// import "./body.css";
+import About from "./about/About";
+import Skills from "./skills/Skills";
+import Projects from "./projects/Projects";
 
 function Body() {
-  const inlineStyle = {
-    color: "#d31b7a",
-    left: "50%",
-    top: "50%",
-    position: "absolute",
-    padding: "20px",
-    transform: "translate(-50%, -50%)",
+  const blackStyle = {
+    backgroundColor: "rgba(0,0,0, 0.7)",
+    borderRadius: "20px",
+    color: "white",
+    margin: "10%",
+    padding: "5%",
+  };
+
+  const whiteStyle = {
+    backgroundColor: "rgba(255,255,255, 0.7)",
+    borderRadius: "10px",
+    color: "black",
+    padding: "5%",
   };
 
   const styles = {
-    height: "950px",
+    height: "700px",
     aspectRatio: "16/9",
   };
 
@@ -23,34 +31,38 @@ function Body() {
       <Parallax
         className="about"
         bgImage={require("../img/white.png")}
-        strength={-500}
-        style={{ borderBottom: "20px solid white" }}
+        strength={700}
       >
         <div style={styles}>
-          <div style={inlineStyle}>
-            <h3>About Section</h3>
+          <div style={blackStyle}>
+            <About />
           </div>
         </div>
       </Parallax>
       <Parallax
         className="skills"
-        // blur={{ min: -1, max: 10 }}
-        bgImage="none" //{require("../img/2.png")}
+        bgImage="none"
         renderLayer={(percentage) => (
-          <div
-            className="skills"
-            style={{
-              color: "#d31b7a",
-              position: "absolute",
-              width: "100px",
-              height: "100px",
-              scale: `none`,
-              left: "50%",
-              top: "50%",
-              transform: `translate(-50%, -50%) scale(${percentage * 5})`,
-            }}
-          >
-            <h5>Skills Section</h5>
+          <div>
+            <div
+              className="skills"
+              style={{
+                // backgroundColor: "white",
+                // opacity: "80%",
+                color: "#DB353B",
+                position: "absolute",
+                width: "60%",
+                height: "40%",
+                scale: `none`,
+                left: "50%",
+                top: "50%",
+                transform: `translate(-50%, -50%) scale(${percentage * 3})`,
+              }}
+            >
+              <div style={whiteStyle}>
+                <Skills />
+              </div>
+            </div>
           </div>
         )}
       >
@@ -62,8 +74,9 @@ function Body() {
         strength={700}
       >
         <div style={styles}>
-          <div style={inlineStyle}>
+          <div style={blackStyle}>
             <h3>Project Section</h3>
+            <Projects />
           </div>
         </div>
       </Parallax>

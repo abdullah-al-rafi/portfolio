@@ -114,13 +114,12 @@ function ContactForm() {
           </div>
           <br />
           <div className="ajaxProgress">
-            <PulseLoader size={15} color="#0C4B33" />
+            <PulseLoader size={15} color="#d31b7a" />
           </div>
           <br />
-          <input type="submit" className="btn btn-primary" id="btn" />
+          <input type="submit" id="btn" />
         </form>
       </div>
-      {/* </Parallax> */}
     </React.Fragment>
   );
 }

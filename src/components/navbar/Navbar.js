@@ -14,13 +14,13 @@ function Navbar() {
         <nav>
           <ul class="nav__links">
             <Link to="about" smooth={true} duration={1000}>
-              <li>About</li>
+              <li id="navs">About</li>
             </Link>
             <Link to="skills" smooth={true} duration={1500}>
-              <li>Skills</li>
+              <li id="navs">Skills</li>
             </Link>
             <Link to="projects" smooth={true} duration={2000}>
-              <li>Projects</li>
+              <li id="navs">Projects</li>
             </Link>
           </ul>
         </nav>
